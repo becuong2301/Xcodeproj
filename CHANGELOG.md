@@ -4,6 +4,10 @@
 
 ##### Enhancements
 
+* Adds ui_test_bundle extension.  
+  [Rajinder Ramgarhia](https://github.com/1nput0utput)
+  [#467](https://github.com/CocoaPods/Xcodeproj/pull/467)
+
 * Remove the dependency upon `activesupport`.  
   [Samuel Giddins](https://github.com/segiddins)
 
