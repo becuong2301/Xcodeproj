@@ -29,6 +29,11 @@ module Xcodeproj
         #
         has_many :dependencies, PBXTargetDependency
 
+        # @return [ObjectList<XCSwiftPackageProductDependency>] the Swift package products necessary to
+        #         build this target.
+        #
+        has_many :package_product_dependencies, XCSwiftPackageProductDependency
+
         public
 
         # @!group Helpers
@@ -309,7 +314,7 @@ module Xcodeproj
         # Adds a file reference for one or more system framework to the project
         # if needed and adds them to the Frameworks build phases.
         #
-        # @param  [Array<String>, String] name
+        # @param  [Array<String>, String] names
         #         The name or the list of the names of the framework.
         #
         # @note   Xcode behaviour is following: if the target has the same SDK
@@ -359,7 +364,7 @@ module Xcodeproj
         # Adds a file reference for one or more system dylib libraries to the project
         # if needed and adds them to the Frameworks build phases.
         #
-        # @param  [Array<String>, String] name
+        # @param  [Array<String>, String] names
         #         The name or the list of the names of the libraries.
         #
         # @return [void]
@@ -385,7 +390,7 @@ module Xcodeproj
         # Adds a file reference for one or more system tbd libraries to the project
         # if needed and adds them to the Frameworks build phases.
         #
-        # @param  [Array<String>, String] name
+        # @param  [Array<String>, String] names
         #         The name or the list of the names of the libraries.
         #
         # @return [void]
