@@ -145,7 +145,8 @@ begin
           release_config = target.build_configurations.find { |c| c.name == 'Release' }
           raise 'Release configuration is missing' if release_config.nil?
 
-          is_swift_present  = !debug_config.build_settings['SWIFT_OPTIMIZATION_LEVEL'].nil?
+          is_swift_present  = !debug_config.build_settings['SWIFT_VERSION'].nil?
+          puts "======== #{is_swift_present} ? === #{debug_config.build_settings}"
           is_swift_expected = attributes[:language] == :swift
           raise "Language doesn't match." unless is_swift_present == is_swift_expected
 

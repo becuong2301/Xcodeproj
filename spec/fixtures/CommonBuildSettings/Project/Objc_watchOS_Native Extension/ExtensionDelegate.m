@@ -35,6 +35,14 @@
             // Be sure to complete the background task once you’re done.
             WKURLSessionRefreshBackgroundTask *backgroundTask = (WKURLSessionRefreshBackgroundTask*)task;
             [backgroundTask setTaskCompletedWithSnapshot:NO];
+        } else if ([task isKindOfClass:[WKRelevantShortcutRefreshBackgroundTask class]]) {
+            // Be sure to complete the relevant-shortcut task once you’re done.
+            WKRelevantShortcutRefreshBackgroundTask *relevantShortcutTask = (WKRelevantShortcutRefreshBackgroundTask*)task;
+            [relevantShortcutTask setTaskCompletedWithSnapshot:NO];
+        } else if ([task isKindOfClass:[WKIntentDidRunRefreshBackgroundTask class]]) {
+            // Be sure to complete the intent-did-run task once you’re done.
+            WKIntentDidRunRefreshBackgroundTask *intentDidRunTask = (WKIntentDidRunRefreshBackgroundTask*)task;
+            [intentDidRunTask setTaskCompletedWithSnapshot:NO];
         } else {
             // make sure to complete unhandled task types
             [task setTaskCompletedWithSnapshot:NO];

@@ -1,9 +1,11 @@
 ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication
-INFOPLIST_FILE = ___PACKAGENAME___/Info.plist
+CODE_SIGN_STYLE = Automatic
+INFOPLIST_FILE = Swift_watchOS_Native Extension/Info.plist
 LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @executable_path/../../Frameworks
-PRODUCT_BUNDLE_IDENTIFIER = ___ASSOCIATEDTARGET_bundleIdentifier___.watchkitapp.watchkitextension
+PRODUCT_BUNDLE_IDENTIFIER = com.example.sampleapp.Swift-iOS-Native.watchkitapp.watchkitextension
 PRODUCT_NAME = ${TARGET_NAME}
 SDKROOT = watchos
 SKIP_INSTALL = YES
+SWIFT_VERSION = 5.0
 TARGETED_DEVICE_FAMILY = 4
-WATCHOS_DEPLOYMENT_TARGET = latest_watchos
+WATCHOS_DEPLOYMENT_TARGET = 6.0
